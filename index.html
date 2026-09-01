@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cubic Yard Calculator — Calculate Volume in Yards, Feet &amp; Meters</title>
+<meta name="description" content="Free cubic yard calculator for gravel, sand, soil, mulch, concrete and fill. Calculate cubic yards, cubic feet and cubic meters for rectangular and circular areas.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://YOURDOMAIN.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cubic Yard Calculator — Calculate Volume in Yards, Feet & Meters">
+<meta property="og:description" content="Free cubic yard calculator for gravel, sand, soil, mulch, concrete and fill. Calculate volume for rectangular and circular project areas.">
+<meta property="og:url" content="https://YOURDOMAIN.com/">
+<meta property="og:site_name" content="Cubic Yard Calculator">
+
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html">
+      <img class="brand-mark" src="assets/logo.svg" alt="" width="34" height="34">
+      Cubic Yard Calculator
+    </a>
+    <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html#calculator" aria-current="page">Calculator</a></li>
+        <li><a href="cubic-yard-formula.html">Formula</a></li>
+        <li><a href="cubic-yard-guide.html">Guide</a></li>
+        <li><a href="materials.html">Materials</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-primary" href="#calculator">Calculate Volume</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
+        <span class="nav-toggle-bars"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-copy">
+        <span class="hero-label">VOLUME ESTIMATION TOOL</span>
+        <h1>Calculate Cubic Yards With Confidence</h1>
+        <p class="hero-sub">Calculate the volume of rectangular, circular, and custom project areas and convert the result into <mark>cubic yards</mark> for gravel, sand, soil, mulch, concrete, and other bulk materials.</p>
+        <div class="hero-badges">
+          <span class="unit-badge">FT&sup3;</span>
+          <span class="unit-badge">YD&sup3;</span>
+          <span class="unit-badge">M&sup3;</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#calculator">Calculate Volume</a>
+          <a class="btn btn-ghost" href="cubic-yard-formula.html">See the formula</a>
+        </div>
+      </div>
+
+      <div class="calc-panel" id="calculator">
+        <div class="calc-card" data-calculator>
+          <div class="calc-card-header">
+            <span class="kicker">Project Estimator</span>
+            <h2>Cubic Yard Calculator</h2>
+            <p>Enter your measurements to estimate project volume.</p>
+          </div>
+
+          <div class="calc-card-body">
+            <div class="shape-tabs" role="tablist" aria-label="Select area shape">
+              <button type="button" class="shape-tab" role="tab" aria-selected="true" data-shape="rectangle">Rectangle / Square</button>
+              <button type="button" class="shape-tab" role="tab" aria-selected="false" data-shape="circle">Circle</button>
+              <button type="button" class="shape-tab" role="tab" aria-selected="false" data-shape="custom">Custom Volume</button>
+            </div>
+
+            <div class="form-alert" role="alert" data-form-alert></div>
+
+            <form data-calc-form novalidate>
+
+              <div data-shape-panel="rectangle">
+                <fieldset class="calc-fieldset">
+                  <legend class="visually-hidden">Rectangle or square measurements</legend>
+                  <div class="field-grid">
+                    <div class="field">
+                      <label for="rect-length">Length</label>
+                      <input type="number" id="rect-length" name="rect-length" min="0" step="any" inputmode="decimal" placeholder="e.g. 20" aria-describedby="rect-length-error">
+                      <span class="field-error" id="rect-length-error" data-error-for="rect-length"></span>
+                    </div>
+                    <div class="field">
+                      <label for="rect-width">Width</label>
+                      <input type="number" id="rect-width" name="rect-width" min="0" step="any" inputmode="decimal" placeholder="e.g. 12" aria-describedby="rect-width-error">
+                      <span class="field-error" id="rect-width-error" data-error-for="rect-width"></span>
+                    </div>
+                  </div>
+                  <div class="field-grid">
+                    <div class="field">
+                      <label for="rect-depth">Depth</label>
+                      <input type="number" id="rect-depth" name="rect-depth" min="0" step="any" inputmode="decimal" placeholder="e.g. 4" aria-describedby="rect-depth-error">
+                      <span class="field-error" id="rect-depth-error" data-error-for="rect-depth"></span>
+                    </div>
+                    <div class="field">
+                      <label for="rect-unit">Unit</label>
+                      <select id="rect-unit" name="rect-unit">
+                        <option value="ft">Feet</option>
+                        <option value="in">Inches</option>
+                        <option value="m">Meters</option>
+                        <option value="cm">Centimeters</option>
+                      </select>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+              <div data-shape-panel="circle" hidden>
+                <fieldset class="calc-fieldset">
+                  <legend class="visually-hidden">Circle measurements</legend>
+                  <div class="field-grid">
+                    <div class="field">
+                      <label for="circle-diameter">Diameter</label>
+                      <input type="number" id="circle-diameter" name="circle-diameter" min="0" step="any" inputmode="decimal" placeholder="e.g. 10" aria-describedby="circle-diameter-error">
+                      <span class="field-error" id="circle-diameter-error" data-error-for="circle-diameter"></span>
+                    </div>
+                    <div class="field">
+                      <label for="circle-depth">Depth</label>
+                      <input type="number" id="circle-depth" name="circle-depth" min="0" step="any" inputmode="decimal" placeholder="e.g. 3" aria-describedby="circle-depth-error">
+                      <span class="field-error" id="circle-depth-error" data-error-for="circle-depth"></span>
+                    </div>
+                  </div>
+                  <div class="field-grid">
+                    <div class="field">
+                      <label for="circle-unit">Unit</label>
+                      <select id="circle-unit" name="circle-unit">
+                        <option value="ft">Feet</option>
+                        <option value="in">Inches</option>
+                        <option value="m">Meters</option>
+                        <option value="cm">Centimeters</option>
+                      </select>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+              <div data-shape-panel="custom" hidden>
+                <fieldset class="calc-fieldset">
+                  <legend class="visually-hidden">Custom known volume</legend>
+                  <div class="field-grid">
+                    <div class="field">
+                      <label for="custom-volume">Known volume</label>
+                      <input type="number" id="custom-volume" name="custom-volume" min="0" step="any" inputmode="decimal" placeholder="e.g. 5" aria-describedby="custom-volume-error">
+                      <span class="field-error" id="custom-volume-error" data-error-for="custom-volume"></span>
+                    </div>
+                    <div class="field">
+                      <label for="custom-unit">Volume unit</label>
+                      <select id="custom-unit" name="custom-unit">
+                        <option value="cuft">Cubic feet</option>
+                        <option value="cuyd">Cubic yards</option>
+                        <option value="cum">Cubic meters</option>
+                      </select>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+              <div class="calc-actions">
+                <button type="submit" class="btn btn-primary">Calculate Volume</button>
+                <button type="button" class="btn btn-secondary" data-reset>Reset</button>
+              </div>
+            </form>
+
+            <div class="measure-visual" data-diagram aria-hidden="false"></div>
+
+            <div class="results-dashboard" data-results hidden>
+              <div class="results-heading">
+                <h3 style="margin:0;">Results</h3>
+                <span>Estimated Volume</span>
+              </div>
+              <div class="result-grid">
+                <div class="result-block">
+                  <span class="result-label">Area</span>
+                  <span class="result-value" data-result-area>0.00 ft&sup2;</span>
+                </div>
+                <div class="result-block">
+                  <span class="result-label">Cubic Feet</span>
+                  <span class="result-value" data-result-cuft>0.00 ft&sup3;</span>
+                </div>
+                <div class="result-block result-block--primary">
+                  <div>
+                    <span class="result-label">Cubic Yards</span>
+                    <span class="result-value" data-result-cuyd>0.00 yd&sup3;</span>
+                  </div>
+                  <span class="result-note">Primary Result</span>
+                </div>
+                <div class="result-block">
+                  <span class="result-label">Cubic Meters</span>
+                  <span class="result-value" data-result-cum>0.00 m&sup3;</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="what-is">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Definition</span>
+        <h2>What Is a Cubic Yard?</h2>
+        <p>A cubic yard is a unit of volume equal to a cube measuring one yard, or three feet, on every side. One cubic yard holds 27 cubic feet, which is why the cubic yard calculator divides your cubic feet result by 27 to convert it. Cubic yards are the standard measurement used by suppliers of gravel, sand, mulch, soil, concrete, and other bulk materials because it describes a large enough volume to price and deliver in bulk loads.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--muted" id="why-calculate">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Why It Matters</span>
+        <h2>Why Calculate Cubic Yards?</h2>
+        <p>Knowing the cubic yard volume of a project area lets you compare supplier pricing, request an accurate delivery quantity, and avoid ordering too much or too little bulk material. Whether you're covering a driveway with gravel, filling raised garden beds with soil, or pouring a concrete slab, converting your length, width, and depth measurements into cubic yards gives you a consistent number to work from.</p>
+      </div>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <span class="card-index">01</span>
+          <h3>Landscaping</h3>
+          <p>Estimate mulch, topsoil, or decorative rock needed to cover garden beds and planting areas.</p>
+        </article>
+        <article class="info-card">
+          <span class="card-index">02</span>
+          <h3>Driveways</h3>
+          <p>Calculate gravel or base material volume for new driveways or resurfacing an existing one.</p>
+        </article>
+        <article class="info-card">
+          <span class="card-index">03</span>
+          <h3>Garden Beds</h3>
+          <p>Work out how much soil or compost is required to fill raised beds to the right depth.</p>
+        </article>
+        <article class="info-card">
+          <span class="card-index">04</span>
+          <h3>Concrete Projects</h3>
+          <p>Estimate concrete volume for slabs, footings, and pads before ordering a mix truck.</p>
+        </article>
+        <article class="info-card">
+          <span class="card-index">05</span>
+          <h3>Construction</h3>
+          <p>Plan excavation, backfill, or aggregate quantities for foundations and site work.</p>
+        </article>
+        <article class="info-card">
+          <span class="card-index">06</span>
+          <h3>Drainage</h3>
+          <p>Calculate gravel or fill volume for French drains, trenches, and drainage channels.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Process</span>
+        <h2>How It Works</h2>
+        <p>Three steps take you from raw measurements to a usable volume estimate.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <span class="step-number">01</span>
+          <h3>Measure</h3>
+          <p>Measure the length, width, and depth of your project area, or the diameter and depth for a circular area.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-number">02</span>
+          <h3>Calculate</h3>
+          <p>Enter your measurements and unit into the calculator to compute area and volume automatically.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-number">03</span>
+          <h3>Estimate</h3>
+          <p>Read your result in cubic yards, cubic feet, and cubic meters to plan or order materials.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--muted" id="formula-preview">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Formula</span>
+        <h2>Formula Preview</h2>
+        <p>The cubic yard calculator applies the same underlying formula used by construction estimators.</p>
+      </div>
+      <div class="calc-sheet">
+        <h3>Rectangular Volume</h3>
+        <div class="calc-sheet-row"><span>Area</span><span>Length &times; Width</span></div>
+        <div class="calc-sheet-row"><span>Volume</span><span>Area &times; Depth</span></div>
+        <div class="calc-sheet-row"><span>Cubic Yards</span><span>Cubic Feet &divide; 27</span></div>
+      </div>
+      <p style="margin-top: var(--space-5);"><a href="cubic-yard-formula.html">See the full formula breakdown with worked examples &rarr;</a></p>
+    </div>
+  </section>
+
+  <section class="section" id="guide-cta">
+    <div class="container">
+      <div class="cta-banner">
+        <div>
+          <h2>Need help measuring your project?</h2>
+          <p>Our step-by-step guide walks through measuring length, width, and depth, converting units, and handling circular or irregular areas.</p>
+        </div>
+        <a class="btn btn-primary" href="cubic-yard-guide.html">Read the Guide</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--muted" id="faq-preview">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Questions</span>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-preview-list">
+        <details class="faq-item">
+          <summary>How many cubic feet are in a cubic yard?</summary>
+          <p>There are 27 cubic feet in one cubic yard, since a cubic yard is a cube measuring 3 feet on each side (3 &times; 3 &times; 3 = 27).</p>
+        </details>
+        <details class="faq-item">
+          <summary>How do I convert cubic feet to cubic yards?</summary>
+          <p>Divide your cubic feet value by 27 to get cubic yards. For example, 100 cubic feet &divide; 27 = 3.70 cubic yards.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I calculate gravel, soil, or concrete with this calculator?</summary>
+          <p>Yes. The calculator works for any bulk material because it calculates volume, not weight. It applies to gravel, sand, soil, mulch, concrete, and other fill materials.</p>
+        </details>
+      </div>
+      <p style="margin-top: var(--space-5);"><a href="faq.html">View all frequently asked questions &rarr;</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/logo.svg" alt="" width="28" height="28">
+          Cubic Yard Calculator
+        </div>
+        <p style="max-width: 32ch; font-size: var(--text-sm);">A free tool for estimating project volume in cubic yards, cubic feet, and cubic meters.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Tool</h3>
+        <ul>
+          <li><a href="index.html#calculator">Calculator</a></li>
+          <li><a href="cubic-yard-formula.html">Formula</a></li>
+          <li><a href="cubic-yard-guide.html">Guide</a></li>
+          <li><a href="materials.html">Materials</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Cubic Yard Calculator. All results are estimates.</span>
+      <span>Built for accurate volume estimation.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

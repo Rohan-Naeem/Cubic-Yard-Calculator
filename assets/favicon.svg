@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Cubic Yard Calculator icon">
+  <rect width="48" height="48" rx="8" fill="#0B1220"/>
+  <g stroke="#DCEAFE" stroke-width="2" stroke-linejoin="round">
+    <polygon points="10,17 24,9 38,17 24,25" fill="#2F6FED"/>
+    <polygon points="10,17 24,25 24,40 10,32" fill="#152037"/>
+    <polygon points="24,25 38,17 38,32 24,40" fill="#101827"/>
+  </g>
+  <circle cx="24" cy="25" r="1.8" fill="#F59E0B"/>
+</svg>
