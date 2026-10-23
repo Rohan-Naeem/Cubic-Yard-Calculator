@@ -800,6 +800,188 @@ button {
 }
 
 /* ==========================================================================
+   NATIVE BANNER AD
+   ========================================================================== */
+
+.ad-banner-native {
+  width: 100%;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+  padding: var(--space-5) 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ad-banner-wrapper {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ad-banner-wrapper > div[id^="container-"] {
+  width: 100%;
+  min-height: 50px;
+}
+
+.ad-banner-wrapper iframe {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .ad-banner-native {
+    padding: var(--space-4) 0;
+  }
+}
+
+/* ---------- Sticky Footer Banner Ad (320x50) ---------- */
+
+body.has-sticky-ad {
+  padding-bottom: 72px;
+}
+
+.sticky-footer-ad {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-top: 1px solid var(--line);
+  box-shadow: 0 -4px 18px rgba(11, 18, 32, 0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 12px;
+}
+
+.sticky-ad-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+}
+
+.sticky-ad-content {
+  width: 320px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.sticky-ad-close {
+  position: absolute;
+  right: -36px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--slate-600);
+  font-size: 16px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(11, 18, 32, 0.08);
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.sticky-ad-close:hover {
+  background: var(--slate-100);
+  color: var(--navy-950);
+  border-color: var(--slate-400);
+}
+
+@media (max-width: 480px) {
+  .sticky-ad-close {
+    right: -6px;
+    top: -12px;
+    transform: none;
+    width: 22px;
+    height: 22px;
+    font-size: 13px;
+  }
+}
+
+/* ---------- Leaderboard Banner Ad (728x90) ---------- */
+
+.ad-banner-leaderboard {
+  width: 100%;
+  padding: var(--space-6) 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--paper);
+}
+
+.ad-leaderboard-wrapper {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ad-leaderboard-wrapper iframe {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .ad-banner-leaderboard {
+    padding: var(--space-4) 0;
+  }
+}
+
+/* ---------- Rectangle Banner Ad (300x250) ---------- */
+
+.ad-section-rectangle {
+  width: 100%;
+  padding: var(--space-6) 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--paper);
+  border-top: 1px solid var(--line);
+}
+
+.ad-rectangle-wrapper {
+  width: 300px;
+  height: 250px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.ad-rectangle-wrapper iframe {
+  max-width: 100%;
+}
+
+/* ==========================================================================
    GENERIC SECTIONS
    ========================================================================== */
 

@@ -334,10 +334,25 @@
   }
 
   /* ------------------------------------------------------------------
+     Sticky footer ad
+     ------------------------------------------------------------------ */
+  function initStickyAd() {
+    var stickyAd = document.getElementById("stickyFooterAd");
+    var closeBtn = document.getElementById("stickyAdClose");
+    if (!stickyAd || !closeBtn) return;
+
+    closeBtn.addEventListener("click", function () {
+      stickyAd.style.display = "none";
+      document.body.classList.remove("has-sticky-ad");
+    });
+  }
+
+  /* ------------------------------------------------------------------
      Init
      ------------------------------------------------------------------ */
   document.addEventListener("DOMContentLoaded", function () {
     initMobileNav();
     initCalculator();
+    initStickyAd();
   });
 })();
